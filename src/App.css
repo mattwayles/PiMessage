@@ -3,9 +3,8 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 30vmin;
-  z-index: 0;
+  height:50vmin;
+  margin-top: 2vh;
 }
 
 .App-header {
@@ -14,7 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -28,15 +26,22 @@
   outline-style: none;
   border-radius: 25px;
   font-size: calc(10px + 2vmin);
-  z-index: 1;
 }
 
 .Input::placeholder {
   text-align: center;
 }
 
-.Button {
-  margin-top: 10vh;
+.ButtonDiv {
+  height: 7vw;
+  display: flex;
+  flex-flow: row;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button, .CancelButton {
   color: #fff;
   background-color: #282c34;
   border: 1px solid gray;
@@ -47,28 +52,85 @@
   padding: calc(2px + 2vmin) calc(2px + 2vmin);
 }
 
+.CancelButton {
+  animation: FadeIn 3s ease-in-out;
+  margin-left: 1vw;
+  font-size: 1.5vmin;
+  padding: .4vw .5vw;
+  color: red;
+  border-color: red;
+}
+
+.CancelButton:hover {
+  background-color: red;
+  color: #fff;
+}
+
 .Button:hover {
   background-color: #fff;
   color: #282c34;
 }
-.Error, .Status {
-  font-size: calc(2px + 2vmin);
+.Error, .Status, .Current {
+  font-size: calc(5px + 2vmin);
 }
 
 .Error {
+  animation: FadeIn 3s ease-in-out;
   color: red;
 }
 
 .Status {
+  animation: FadeInOut 5s ease-in-out;
   font-weight: bold;
   color: lightgreen;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Current {
+  animation: FadeIn 3s ease-in-out;
+  color: wheat;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
   }
+}
+
+@keyframes FadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .App-logo {
+    height:65vmin;
+    margin-top: 2vh;
+  }
+
+  .ButtonDiv {
+    height: 20vw;
+    width: 95%;
+  }
+
+  .CancelButton {
+    margin-left: 3vw;
+    font-size: 2vmin;
+    padding: 1.25vw 1.5vw;
+  }
+
+  .Error, .Status, .Current {
+    font-size: calc(5px + 3vmin);
+  }
+
+  .Input {
+    width: 95%;
+  }
+
 }

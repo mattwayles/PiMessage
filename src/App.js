@@ -12,8 +12,10 @@ class App extends Component {
         error: null
     };
   componentWillMount() {
+
+      //Enter API Key
       let config = {
-          apiKey: "AIzaSyBDjQDr1S1EotBtTdrOFLkGTDEL3Klgp-Y",
+          apiKey: null,
           authDomain: "remindbypi.firebaseapp.com",
           databaseURL: "https://remindbypi.firebaseio.com",
       };
